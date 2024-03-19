@@ -11,6 +11,7 @@ Additional Instructions:
 Example 1:
 INPUT: input content here
 OUTPUT: output content here
+---
 Example 2:
 INPUT: input content here
 OUTPUT: output content here

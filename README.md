@@ -7,7 +7,7 @@
 ## Installation
 
 ```bash
-pip install prompt_autotune
+pip install prompt-autotune
 ```
 
 ## Usage
