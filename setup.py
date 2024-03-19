@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='prompt_autotune',
-    version='0.2.0',
+    version='0.3.0',
     packages=find_packages(),
     install_requires=[
         "llama_index==0.10.20",
@@ -11,14 +11,15 @@ setup(
     # Additional metadata about your package.
     author='Chinmay Shrivastava',
     author_email='cshrivastava99@gmail.com',
-    description='A short description of the package',
+    description='A light weight library that takes in a `task description` and a `prompt` and tunes the prompt to perform better.',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    url='https://github.com/yourusername/package_name',
+    url='https://github.com/ChinmayShrivastava/prompt-autotune',
     license='MIT',
     classifiers=[
-        # Classifiers help users find your project by categorizing it.
-        # For a list of valid classifiers, see https://pypi.org/classifiers/
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
     ],
     # Entry points create executable commands and tools for your package.
     entry_points={
