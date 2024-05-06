@@ -16,7 +16,7 @@ class TunePrompt:
         prompt: str = None,
         task: str = None,
         examples: List[Example] = None,
-        powerllm: OpenAI = OpenAI("gpt-4-turbo-preview", max_tokens=2048),
+        powerllm: OpenAI = OpenAI("gpt-4", max_tokens=2048),
         llm: OpenAI = OpenAI("gpt-4"),
         number_of_examples: int = 10,
         number_of_cycles: int = 3,

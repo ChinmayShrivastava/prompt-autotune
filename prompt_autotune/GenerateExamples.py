@@ -30,9 +30,9 @@ class Example:
 class GenerateExamples:
 
     def __init__(
-        self
-        ,task_description: str
-        ,number_of_examples: int
+        self,
+        task_description: str,
+        number_of_examples: int
     ) -> None:
         self.task_description = task_description
         self.number_of_examples = number_of_examples
@@ -49,10 +49,9 @@ class GenerateExamples:
         return parsed_examples
 
     def _parse_examples(self, response: str) -> List[Example]:
-        # add "\n\n" to the end of the response to make sure the last example is parsed
-        response += "\n\n"
-        example_regex = re.compile(r'Example (\d+):\nINPUT: (.+?)\n\nOUTPUT: (.+?)\n\n', re.DOTALL)
-        examples = example_regex.findall(response)
+        examples = [e.strip() for e in response.split("---") if e.strip()]
+        # each ecample is in the format: Example i\nINPUT: input\nOUTPUT: output, extract input and output
+        examples = [re.search(r"INPUT: (.*)\nOUTPUT: (.*)", e).groups() for e in examples]
         return [Example(id=i, input=inp, output=out) for i, (inp, out) in enumerate(examples)]
     
     def __str__(self) -> str:
